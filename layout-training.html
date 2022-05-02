@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root{
+      --color-c4: #c4c4c4;
+    }
+    .flex-center-center{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .border-black{
+      border: 1px solid black;
+    }
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    #root{
+      width: 100vw;
+      height: 100vh;
+    }
+    #con{
+      width: inherit;
+      height: 70%;
+    }
+    #con>div{
+      display: flex;
+      height: inherit;
+      /* position: absolute; */
+    }
+    #con>div:nth-child(1){
+      height: 100%;
+      width: 50%;
+      order: 3;
+      position: relative;
+      top: -2vh;
+    }
+    /* 반원 보더 */
+    #con>div:nth-child(1)>div{
+      width: 40vw;
+      height: 40vw;
+      border-radius: 50%;
+      position: sticky;
+      border: 1px solid #414141;
+    }
+    /* 보더 네모 겹침, text */
+    #con>div:nth-child(2){
+      position: absolute;
+      height: 100%;
+      width: 30%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      z-index: 2;
+    }
+    #con>div:nth-child(2)>p{
+      width: 300px;
+      position: absolute;
+      top: 48vh;
+      z-index: 3;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 300;
+      text-align: end;
+    }
+    #con>div:nth-child(2)>div:nth-child(2)>div{
+      width: 20vh;
+      height: 20vh;
+      background-color: var(--color-c4);
+      border-radius: 30%;
+      transform: rotate(30deg);
+      position: relative;
+    }
+    #con>div:nth-child(2)>div:nth-child(2)>div:nth-child(1){
+      position: absolute;
+      background-color: var(--color-c4);
+      z-index: 2;
+
+    }
+    #con>div:nth-child(2)>div:nth-child(2)>div:nth-child(2){
+      /* position: sticky; */
+      filter: blur(25px);
+      left: 10vh;
+      top: -5vh;
+    }
+    /* 점점점 */
+    #con>div:nth-child(3){
+      height: 100%;
+      width: 30%;
+      order: 1;
+      display: flex;
+      align-items: center;
+      position: relative;
+      left: 15vh;
+      background-color: #fff;
+    }
+    #con>div:nth-child(3)>ul{
+      height: 70%;
+      list-style-type: none;
+      display: flex;
+      align-items: flex-end;
+      column-gap: 1vh;
+    }
+    #con>div:nth-child(3)>ul>li{
+      width: 1vh;
+      height: 1vh;
+      background-color: var(--color-c4);
+      border-radius: 50%;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root" class="flex-center-center">
+    <!-- 가운데 부분을 가운데 위치시킬 부분 -->
+    <div id="con" class="flex-center-center">
+      <!-- 반원 보더 con -->
+      <div class="flex-center-center">
+        <div class="border-black"></div>
+      </div>
+      <!-- 보더 네모 겹침, 텍스트 con -->
+      <div>
+        <p>advanced markup</p>
+        <div>
+          <div></div>
+          <!-- 인터랙션에서 blur를 다룰 수 있다면 큰 효과가 날 것 -->
+          <div></div>
+        </div>
+      </div>
+      <!-- 점점점 con -->
+      <div>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
